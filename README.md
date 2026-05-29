@@ -1,2 +1,5 @@
-# inventory-order-system
-Full-stack inventory and order management system with React, FastAPI, and PostgreSQL
+# Inventory & Order Management System
+
+A full-stack inventory and order management app built with FastAPI, PostgreSQL, and React.
+
+_Built by Varshith — work in progress._

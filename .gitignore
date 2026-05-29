@@ -1,3 +1,26 @@
+# Node / Vite
+node_modules/
+dist/
+dist-ssr/
+.vite/
+*.local
+
+# Environment variables (NEVER commit real secrets)
+.env
+.env.local
+
+# Editor / OS
+.DS_Store
+.vscode/
+.windsurf/
+*.swp
+
+# Docker
+docker-compose.override.yml
+
+# Documentation
+ethara-assigment-plan.md
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
