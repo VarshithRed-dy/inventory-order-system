@@ -14,7 +14,9 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from app.config import DATABASE_URL
 from app.database import Base
-import app.models.product  # noqa: F401 — registers the products table with Base
+import app.models.product   # noqa: F401
+import app.models.customer  # noqa: F401
+import app.models.order     # noqa: F401
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
