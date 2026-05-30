@@ -3,6 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app import config
 
+from app.routers import products
+
 app = FastAPI(
     title=config.PROJECT_NAME,
     version=config.API_VERSION,
@@ -16,6 +18,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(products.router)
 
 
 @app.get("/health", tags=["system"])
