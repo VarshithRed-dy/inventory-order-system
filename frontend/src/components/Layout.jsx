@@ -1,4 +1,5 @@
-import { AppShell, Group, Title, Button } from "@mantine/core";
+import { AppShell, Group, Title, NavLink as MantineNavLink, Burger } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 import {
   IconLayoutDashboard,
   IconBox,
@@ -15,33 +16,44 @@ const links = [
 ];
 
 export default function Layout({ children }) {
+  const [opened, { toggle, close }] = useDisclosure();
   const location = useLocation();
 
   return (
-    <AppShell header={{ height: 64 }} padding="lg">
+    <AppShell
+      header={{ height: 64 }}
+      navbar={{
+        width: 240,
+        breakpoint: "sm",
+        collapsed: { mobile: !opened },
+      }}
+      padding="lg"
+    >
       <AppShell.Header>
-        <Group h="100%" px="lg" justify="space-between">
-          <Title order={3}>📦 Inventory Manager</Title>
-          <Group gap="xs">
-            {links.map((link) => {
-              const Icon = link.icon;
-              const active = location.pathname === link.to;
-              return (
-                <Button
-                  key={link.to}
-                  component={NavLink}
-                  to={link.to}
-                  variant={active ? "filled" : "subtle"}
-                  leftSection={<Icon size={18} />}
-                  size="sm"
-                >
-                  {link.label}
-                </Button>
-              );
-            })}
-          </Group>
+        <Group h="100%" px="md" gap="sm">
+          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+          <Title order={3}>Inventory Manager</Title>
         </Group>
       </AppShell.Header>
+
+      <AppShell.Navbar p="md">
+        {links.map((link) => {
+          const Icon = link.icon;
+          return (
+            <MantineNavLink
+              key={link.to}
+              component={NavLink}
+              to={link.to}
+              label={link.label}
+              leftSection={<Icon size={18} />}
+              active={location.pathname === link.to}
+              onClick={close}
+              mb={4}
+            />
+          );
+        })}
+      </AppShell.Navbar>
+
       <AppShell.Main>{children}</AppShell.Main>
     </AppShell>
   );

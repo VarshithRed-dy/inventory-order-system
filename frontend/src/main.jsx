@@ -8,6 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 // Mantine styles must be imported before your own.
 import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css";
+import "@mantine/charts/styles.css";
 
 import App from "./App.jsx";
 
