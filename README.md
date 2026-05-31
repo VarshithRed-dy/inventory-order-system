@@ -5,7 +5,7 @@ with stock deduction handled safely inside atomic database transactions.
 
 ## 🔗 Live Demo
 
-- **Frontend (Vercel):** https://inventory-order-system-9mjgd06xh-varshith-reddy-projects.vercel.app/
+- **Frontend (Vercel):** https://inventory-order-beta.vercel.app/
 - **API docs (Swagger):** https://inventory-order-system-do81.onrender.com/docs
 - **Docker image:** https://hub.docker.com/r/varshith13/inventory-backend
 - **Source:** https://github.com/varshith13/inventory-order-system
