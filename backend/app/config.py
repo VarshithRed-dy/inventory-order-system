@@ -10,10 +10,9 @@ API_VERSION = "0.1.0"
 
 # Which frontend origins are allowed to call this API (CORS).
 # Comma-separated in the env var; defaults to the local Vite dev server.
-CORS_ORIGINS = os.getenv("CORS_ORIGINS", "http://localhost:5173").split(",")
-
+CORS_ORIGINS = ["https://inventory-order-system-5woiyy4i4-varshith-reddy-projects.vercel.app/", "http://localhost:3000"]
 
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
-    "postgresql+psycopg2://postgres:devpass@localhost:5433/inventory",
+    "postgresql+psycopg2://inventory_db_67uk_user:CphJtKqwfdlC5hLqB8nDUI26oiOXOYoL@dpg-d8e32g58nd3s73a8k2tg-a/inventory_db_67uk",
 )
